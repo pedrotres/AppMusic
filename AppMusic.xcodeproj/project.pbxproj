@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F773143227BDDCF80036B1AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143127BDDCF80036B1AB /* UIViewExtension.swift */; };
 		F773143427BDDDD80036B1AB /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143327BDDDD80036B1AB /* NSAttributedStringExtension.swift */; };
 		F773143627BDDE550036B1AB /* NSTextAttachmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143527BDDE550036B1AB /* NSTextAttachmentExtension.swift */; };
+		F773143827BDDF830036B1AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143727BDDF830036B1AB /* UIViewExtension.swift */; };
+		F79896CA27C125630033EC4A /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79896C927C125630033EC4A /* CardViewModel.swift */; };
+		F79896CD27C126CE0033EC4A /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79896CC27C126CE0033EC4A /* CardViewTableViewCell.swift */; };
+		F79896D027C128340033EC4A /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79896CF27C128340033EC4A /* CustomCardView.swift */; };
 		F7B622CE27BDDA49004486CE /* Extension in Resources */ = {isa = PBXBuildFile; fileRef = F7B622CD27BDDA49004486CE /* Extension */; };
 		F7CE3C3327BDC6AA00131ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C3227BDC6AA00131ADF /* AppDelegate.swift */; };
 		F7CE3C3527BDC6AA00131ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C3427BDC6AA00131ADF /* SceneDelegate.swift */; };
@@ -17,13 +20,15 @@
 		F7CE3C3C27BDC6AB00131ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7CE3C3B27BDC6AB00131ADF /* Assets.xcassets */; };
 		F7CE3C3F27BDC6AB00131ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7CE3C3D27BDC6AB00131ADF /* LaunchScreen.storyboard */; };
 		F7CE3C4827BDD02900131ADF /* HomeViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C4727BDD02900131ADF /* HomeViewControllerScreen.swift */; };
-		F7CE3C5327BDD4BB00131ADF /* Model in Resources */ = {isa = PBXBuildFile; fileRef = F7CE3C5227BDD4BB00131ADF /* Model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F773143127BDDCF80036B1AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = AppMusic/Extension/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
 		F773143327BDDDD80036B1AB /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSAttributedStringExtension.swift; path = Extension/NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		F773143527BDDE550036B1AB /* NSTextAttachmentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSTextAttachmentExtension.swift; path = Extension/NSTextAttachmentExtension.swift; sourceTree = "<group>"; };
+		F773143727BDDF830036B1AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = AppMusic/Extension/UIViewExtension.swift; sourceTree = "<group>"; };
+		F79896C927C125630033EC4A /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		F79896CC27C126CE0033EC4A /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
+		F79896CF27C128340033EC4A /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		F7B622CD27BDDA49004486CE /* Extension */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extension; sourceTree = "<group>"; };
 		F7CE3C2F27BDC6AA00131ADF /* AppMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7CE3C3227BDC6AA00131ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		F7CE3C3E27BDC6AB00131ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7CE3C4027BDC6AB00131ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7CE3C4727BDD02900131ADF /* HomeViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerScreen.swift; sourceTree = "<group>"; };
-		F7CE3C5227BDD4BB00131ADF /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Model; path = ../../../../Downloads/AppMusicBF/AppMusicBF/Model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +51,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F79896C827C125450033EC4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F79896C927C125630033EC4A /* CardViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F79896CB27C126A00033EC4A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F79896CC27C126CE0033EC4A /* CardViewTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F79896CE27C128110033EC4A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F79896CF27C128340033EC4A /* CustomCardView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		F7CE3C2627BDC6AA00131ADF = {
 			isa = PBXGroup;
 			children = (
+				F773143727BDDF830036B1AB /* UIViewExtension.swift */,
 				F7CE3C3127BDC6AA00131ADF /* AppMusic */,
 				F7CE3C3027BDC6AA00131ADF /* Products */,
 			);
@@ -66,10 +95,12 @@
 		F7CE3C3127BDC6AA00131ADF /* AppMusic */ = {
 			isa = PBXGroup;
 			children = (
+				F79896CE27C128110033EC4A /* CustomView */,
+				F79896C827C125450033EC4A /* Model */,
 				F7B622CD27BDDA49004486CE /* Extension */,
-				F7CE3C5227BDD4BB00131ADF /* Model */,
 				F7CE3C3227BDC6AA00131ADF /* AppDelegate.swift */,
 				F7CE3C3427BDC6AA00131ADF /* SceneDelegate.swift */,
+				F79896CB27C126A00033EC4A /* Cell */,
 				F7CE3C4627BDCFEE00131ADF /* Home */,
 				F7CE3C3B27BDC6AB00131ADF /* Assets.xcassets */,
 				F7CE3C3D27BDC6AB00131ADF /* LaunchScreen.storyboard */,
@@ -93,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				F7CE3C4727BDD02900131ADF /* HomeViewControllerScreen.swift */,
-				F773143127BDDCF80036B1AB /* UIViewExtension.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -159,7 +189,6 @@
 				F7CE3C3F27BDC6AB00131ADF /* LaunchScreen.storyboard in Resources */,
 				F7CE3C3C27BDC6AB00131ADF /* Assets.xcassets in Resources */,
 				F7B622CE27BDDA49004486CE /* Extension in Resources */,
-				F7CE3C5327BDD4BB00131ADF /* Model in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,11 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F773143227BDDCF80036B1AB /* UIViewExtension.swift in Sources */,
+				F79896CD27C126CE0033EC4A /* CardViewTableViewCell.swift in Sources */,
 				F7CE3C3727BDC6AA00131ADF /* HomeViewController.swift in Sources */,
 				F773143627BDDE550036B1AB /* NSTextAttachmentExtension.swift in Sources */,
 				F7CE3C4827BDD02900131ADF /* HomeViewControllerScreen.swift in Sources */,
 				F773143427BDDDD80036B1AB /* NSAttributedStringExtension.swift in Sources */,
+				F79896CA27C125630033EC4A /* CardViewModel.swift in Sources */,
+				F773143827BDDF830036B1AB /* UIViewExtension.swift in Sources */,
+				F79896D027C128340033EC4A /* CustomCardView.swift in Sources */,
 				F7CE3C3327BDC6AA00131ADF /* AppDelegate.swift in Sources */,
 				F7CE3C3527BDC6AA00131ADF /* SceneDelegate.swift in Sources */,
 			);

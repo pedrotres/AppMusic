@@ -14,6 +14,7 @@ class HomeViewControllerScreen: UIView {
         tv.separatorStyle = .none
         tv.tableFooterView = UIView()
         tv.showsVerticalScrollIndicator = false
+        tv.register(CardViewTableViewCell.self, forCellReuseIdentifier: CardViewTableViewCell.identifer)
         return tv
     }()
     
@@ -26,6 +27,8 @@ class HomeViewControllerScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(self.tableView)
+        self.setUpConstrains()
         
     }
     
