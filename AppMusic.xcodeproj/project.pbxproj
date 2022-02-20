@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F766693D27C26BA600A75C6C /* CardActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766693C27C26BA600A75C6C /* CardActionView.swift */; };
+		F766694027C2A8DF00A75C6C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766693F27C2A8DF00A75C6C /* DetailViewController.swift */; };
+		F766694327C2A91800A75C6C /* DetailViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766694227C2A91800A75C6C /* DetailViewControllerScreen.swift */; };
 		F773143427BDDDD80036B1AB /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143327BDDDD80036B1AB /* NSAttributedStringExtension.swift */; };
 		F773143627BDDE550036B1AB /* NSTextAttachmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143527BDDE550036B1AB /* NSTextAttachmentExtension.swift */; };
 		F773143827BDDF830036B1AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773143727BDDF830036B1AB /* UIViewExtension.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F766693C27C26BA600A75C6C /* CardActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionView.swift; sourceTree = "<group>"; };
+		F766693F27C2A8DF00A75C6C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F766694227C2A91800A75C6C /* DetailViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerScreen.swift; sourceTree = "<group>"; };
 		F773143327BDDDD80036B1AB /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSAttributedStringExtension.swift; path = Extension/NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		F773143527BDDE550036B1AB /* NSTextAttachmentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSTextAttachmentExtension.swift; path = Extension/NSTextAttachmentExtension.swift; sourceTree = "<group>"; };
 		F773143727BDDF830036B1AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = AppMusic/Extension/UIViewExtension.swift; sourceTree = "<group>"; };
@@ -51,6 +57,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F766693E27C2A8C000A75C6C /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F766694127C2A8F500A75C6C /* Screen */,
+				F766693F27C2A8DF00A75C6C /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		F766694127C2A8F500A75C6C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F766694227C2A91800A75C6C /* DetailViewControllerScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		F79896C827C125450033EC4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				F79896CF27C128340033EC4A /* CustomCardView.swift */,
+				F766693C27C26BA600A75C6C /* CardActionView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -95,6 +119,7 @@
 		F7CE3C3127BDC6AA00131ADF /* AppMusic */ = {
 			isa = PBXGroup;
 			children = (
+				F766693E27C2A8C000A75C6C /* DetailViewController */,
 				F79896CE27C128110033EC4A /* CustomView */,
 				F79896C827C125450033EC4A /* Model */,
 				F7B622CD27BDDA49004486CE /* Extension */,
@@ -199,12 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F766694327C2A91800A75C6C /* DetailViewControllerScreen.swift in Sources */,
 				F79896CD27C126CE0033EC4A /* CardViewTableViewCell.swift in Sources */,
 				F7CE3C3727BDC6AA00131ADF /* HomeViewController.swift in Sources */,
 				F773143627BDDE550036B1AB /* NSTextAttachmentExtension.swift in Sources */,
+				F766694027C2A8DF00A75C6C /* DetailViewController.swift in Sources */,
 				F7CE3C4827BDD02900131ADF /* HomeViewControllerScreen.swift in Sources */,
 				F773143427BDDDD80036B1AB /* NSAttributedStringExtension.swift in Sources */,
 				F79896CA27C125630033EC4A /* CardViewModel.swift in Sources */,
+				F766693D27C26BA600A75C6C /* CardActionView.swift in Sources */,
 				F773143827BDDF830036B1AB /* UIViewExtension.swift in Sources */,
 				F79896D027C128340033EC4A /* CustomCardView.swift in Sources */,
 				F7CE3C3327BDC6AA00131ADF /* AppDelegate.swift in Sources */,
