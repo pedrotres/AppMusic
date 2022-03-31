@@ -15,8 +15,8 @@ class DetailViewControllerScreen: UIView {
     
     
     var cardModel: CardViewModel?
-    
     var navBarTopAnchor: NSLayoutConstraint?
+    var PlayerViewbottomAnchoer: NSLayoutConstraint?
     
     private weak var delegate: DetailViewControllerScreenDelegate?
     
@@ -35,6 +35,14 @@ class DetailViewControllerScreen: UIView {
         let v = CustomCardView(mode: .full)
         v.translatesAutoresizingMaskIntoConstraints = false
         v.cardContainerView.layer.cornerRadius = 0.0
+        v.setupView(data: self.cardModel ?? CardViewModel())
+        return v
+    }()
+    
+    lazy var navBar: CustomNavBar = {
+        let v = CustomNavBar()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = .black
         v.setupView(data: self.cardModel ?? CardViewModel())
         return v
     }()
@@ -62,6 +70,12 @@ class DetailViewControllerScreen: UIView {
         return btn
     }()
     
+    lazy var playerView: CustomPlayerView = {
+        let pv = CustomPlayerView()
+        pv.translatesAutoresizingMaskIntoConstraints = false
+        return pv
+    }()
+    
     @objc func closePressed() {
         self.delegate?.tappedCloseButton()
     }
@@ -74,7 +88,7 @@ class DetailViewControllerScreen: UIView {
             self.setupViews()
             self.setupConstraints()
         }
-
+        
     }
     
     required init?(coder: NSCoder) {
@@ -86,7 +100,9 @@ class DetailViewControllerScreen: UIView {
         self.addSubview(self.scrollView)
         self.scrollView.addSubview(cardView)
         self.scrollView.addSubview(self.tableView)
+        self.addSubview(self.navBar)
         self.addSubview(self.closeBtn)
+        self.addSubview(self.playerView)
     }
     
     private func setupConstraints () {
@@ -114,9 +130,22 @@ class DetailViewControllerScreen: UIView {
             self.closeBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.closeBtn.widthAnchor.constraint(equalToConstant: 30),
             self.closeBtn.heightAnchor.constraint(equalToConstant: 30),
-            self.closeBtn.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10)
+            self.closeBtn.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             
+            self.navBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.navBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.navBar.heightAnchor.constraint(equalToConstant: ((topPadding ?? 0.0) + 80)),
+            
+            self.playerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.playerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.playerView.heightAnchor.constraint(equalToConstant: 120)
         ])
+        
+        self.navBarTopAnchor = self.navBar.topAnchor.constraint(equalTo: self.topAnchor, constant: -((topPadding ?? 0.0) + 60))
+        self.navBarTopAnchor?.isActive = true
+        
+        self.PlayerViewbottomAnchoer = self.playerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 120)
+        self.PlayerViewbottomAnchoer?.isActive = true
         
     }
     

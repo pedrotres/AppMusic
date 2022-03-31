@@ -7,11 +7,18 @@
 
 import UIKit
 
+enum StateAnimation {
+    case long
+    case short
+}
+
 class DetailViewController: UIViewController {
     
     var screen: DetailViewControllerScreen?
     
     var cardModel: CardViewModel?
+    
+    var valueAnimation: StateAnimation = .long
     
     override func loadView() {
         self.screen = DetailViewControllerScreen(dataView: self.cardModel)
@@ -22,13 +29,44 @@ class DetailViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
+    private func animationWithView(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+            self.view.layoutIfNeeded()
+        }
+        
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let window = UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .compactMap({$0 as? UIWindowScene })
+                .first?.windows.filter({$0.isKeyWindow}).first
+            
+            let topPadding = window?.safeAreaInsets.top
+            print(scrollView.contentOffset.y)
+            
+            if scrollView.contentOffset.y >= 300 {
+                self.screen?.navBarTopAnchor?.constant = 0
+                
+                if valueAnimation == .long{
+                    self.animationWithView()
+                }
+                self.valueAnimation = .short
+                
+            }else {
+                self.screen?.navBarTopAnchor?.constant = ((topPadding ?? 0.0) + 80)
+                if valueAnimation == .short{
+                    self.animationWithView()
+                }
+                self.valueAnimation = .long
+            }
+        }
+    }
 }
 
 extension DetailViewController: DetailViewControllerScreenDelegate {
@@ -52,6 +90,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.screen?.playerView.setupView(data: self.cardModel?.cardList?[indexPath.row] ?? CardListModel())
+        self.screen?.PlayerViewbottomAnchoer?.constant = 0
+        self.animationWithView()
+    }
 }
-
